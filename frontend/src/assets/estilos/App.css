@@ -1,0 +1,358 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: white;
+}
+
+
+
+
+/* BARRA DE NAVEGACIÓN (INICIO) */
+body::-webkit-scrollbar{
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb{
+    border-radius: 7px;
+    background-color: rgb(0, 0, 0);
+}
+
+body::-webkit-scrollbar-track-piece{
+    background-color: rgba(0, 0, 0, 0.527);
+}
+/* BARRA DE NAVEGACIÓN (FIN) */
+
+
+/* HEADER (INICIO) */
+header{
+    margin: 10px 0 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+}
+.container-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    width: 95vw;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.527),rgba(255, 255, 255, 0.788) 16% 17%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 0px 1px 2px 1px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.logo-image{
+    width: 220px;
+    height: 60px;
+    object-fit: contain;
+}
+
+#categoria{
+    color: rgb(0, 0, 0);
+    height: 40px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid black;
+}
+
+#categoria:hover{
+    border: 2px solid black;
+}
+
+option{
+    color: rgb(0, 0, 0);
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 40px;
+}
+
+.iconsearch{
+    font-size: 28px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-top-right-radius: 10px;
+    padding: 6px 6px 6px 6px;
+    cursor: pointer;
+}
+
+.buscador{
+    height: 40px;
+    width: 400px;
+    border: 1px solid black;
+    padding-left: 20px;
+    outline: none;
+}
+
+.perfil, .fa-cart-shopping, .fa-heart{
+    cursor: pointer;
+}
+
+.carCount{
+    width: 40px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.countProducts{
+    color: white;
+    display: flex;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 0;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.buscador:hover{
+    border: 2px solid black;
+    margin: 0;
+}
+
+.carrito_perfil{
+    height: 50px;
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(0, 0, 0);
+}
+.separador{
+    font-size: 40px;
+    font-weight: 100;
+    cursor: default;
+}
+
+.perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 30%;
+}
+
+.image-perfil{
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.perfil-image{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* HEADER (FIN) */
+
+
+
+/* CARRUSEL (INICIO) */
+.containerCarrusel{
+    display: flex;
+    justify-content: center;
+    width: 81.1em;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 1em;
+}
+
+.carruselBoot{
+    width: 42.5em;
+    border-radius: 7px;
+}
+
+.imageCarrusel{
+    border-radius: 4px;
+}
+/* CARRUSEL (FIN) */
+
+
+
+/* TITULO LISTA PRODUCTOS (INICIO) */
+.conTitle{
+    border-top: 0.5px solid black;
+    border-right: 0.5px solid black;
+    border-left: 0.5px solid black;
+    background: linear-gradient(to right, red, transparent, transparent, aqua);
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.title{
+    margin: 0;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    font-family: 'Doctor Glitch', sans-serif;                                               
+}
+/* TITULO LISTA PRODUCTOS (FIN) */
+
+
+
+/* LISTA PRODUCTOS (INICIO) */
+.products{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    /* box-shadow: -1px 1px 5px 0 black; */
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;     
+    width: 95vw;                          
+}
+
+.listProducts{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 2.5em 1.5em 2.5em 0;
+    gap: 5em;
+    width: 90vw;
+}
+/* LISTA PRODUCTOS (FIN) */
+
+
+/* CARDS (INICIO) */
+.card{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    width: 14.5em;
+    border-radius: 7px;
+    transition: box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.card:hover{
+    box-shadow: -2px 2px 2px 0px;
+    transition: box-shadow 0.4s ease;
+}
+
+.imagenProduct{
+    border-radius: 7px;
+    width: 12.5em;
+    height: 150px;
+    cursor: pointer;
+}
+
+.name{
+    margin: 5px 0 5px 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.precio-boton{
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 10px 0 10px 0;
+}
+
+.precio{
+    font-size: 20px;
+    margin: 5px 0 5px 0;
+    cursor: pointer;
+}
+
+.botonComprar{
+    background-color: rgb(95, 223, 255);
+    width: 100px;
+    height: 35px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.countBuy{
+    margin-bottom: 0;
+}
+
+.botonComprar:active{
+    border: 2px solid black;
+}
+
+.buttonContainer{
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+}
+/* CARDS (FIN) */
+
+
+
+/* CARDS EXTENDIDAS (INICIO)*/
+
+/* CARDS EXTENDIDAS (FIN)*/
+
+
+
+/* FOOTER (INICIO) */
+.footerCont{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0.5em 0 0.5em 0;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    box-shadow: -2px 2px 3px 0 black;
+}
+
+.info{
+    width: 500px;
+    text-align: center;
+}
+
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    width: 200px;
+}
+
+.fa-brands:hover{
+    color: aqua;
+    transition: color 0.4s ease;
+}
+
+.fa-brands{
+    cursor: pointer;
+    transition: color 0.4s ease;
+
+}
+/* FOOTER (FIN) */
+
