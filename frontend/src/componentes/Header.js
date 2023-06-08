@@ -24,7 +24,7 @@ export function Header(){
                 <p className='separador'>|</p>
 
                 <div className="image-perfil">
-                    <img className="perfil-image" src={logo} alt=""/>
+                    <img className="perfil-image" src={logo} alt=""><Link to='/backend'></Link></img>
                 </div>
             </div>
         </div>
