@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import { useProducts } from '../../context/context';
 import '../../assets/estilos/App.css'
+import { toast } from 'react-hot-toast';
 
 export const ShoppingCar = ({ products, setOpen, open }) => {
     const { removeShopCar, createSale, dropShopCar } = useProducts()
@@ -110,6 +111,7 @@ export const ShoppingCar = ({ products, setOpen, open }) => {
                               if(products.length !== 0) {
                                 createSale({products: names, prices: precios, value: total, date: new Date().toDateString()});
                                 dropShopCar();
+                                toast.success("COMPRADO")
                               }
                             }}
                             className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"

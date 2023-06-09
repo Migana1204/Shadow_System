@@ -17,7 +17,7 @@ export const CarShopCard = ({ product }) => {
                     <h3 className="text-sm text-gray-700">
                     <span>{product.name}</span>
                     </h3>
-                    <p className="mt-1 text-sm text-gray-500">Stock: {product.stock}</p>
+                    
                 </div>
                 <p className="text-sm font-medium text-gray-900">${product.price}</p>
             </div>

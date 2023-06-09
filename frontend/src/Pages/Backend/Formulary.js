@@ -37,7 +37,6 @@ export const Formulary = () => {
           validationSchema={yup.object({
             name: yup.string().required("Name is Required"),
             description: yup.string().required("Description is Required"),
-            stock: yup.number().required("Stock is Required"),
             price: yup.number().required("Price is Required")
           })}
           onSubmit={async (values, actions) => {
@@ -59,9 +58,6 @@ export const Formulary = () => {
                 <label htmlFor='description' className='text-sm block font-bold text-gray-400'>Description</label>
                 <Field component="textarea" rows="3" className="mb-4 px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full" name="description" placeholder="Description"></Field>
                 <ErrorMessage component="p" className='text-red-400 text-sm' name='description'></ErrorMessage>
-                <label htmlFor='stock' className='text-sm block font-bold text-gray-400'>Stock</label>
-                <Field type="number" className="mb-4 px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full" name="stock" placeholder="Stock"></Field>
-                <ErrorMessage component="p" className='text-red-400 text-sm' name='stock'></ErrorMessage>
                 <label htmlFor='price' className='text-sm block font-bold text-gray-400'>Price</label>
                 <Field type="number" className="mb-4 px-3 py-2 focus:outline-none rounded bg-gray-600 text-white w-full" name="price" placeholder="Price"></Field>
                 <ErrorMessage component="p" className='text-red-400 text-sm' name='price'></ErrorMessage>

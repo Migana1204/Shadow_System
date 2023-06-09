@@ -31,7 +31,7 @@ export const ProductCard = ({ product }) => {
                 }} className='bg-red-600 text-sm px-2 py-1 rounded-sm'>Delete</button>
             </div>
             <p>{product.description}</p>
-            <p>Stock: {product.stock}</p>
+            
             <p>Price: {product.price}</p>
         </div>
         {product.image && <img className='object-cover h-90 w-full' src={product.image.url}></img>}
