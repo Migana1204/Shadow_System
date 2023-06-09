@@ -16,7 +16,7 @@ export function Header(){
 
             <div className="carrito_perfil">
                 <Link to="/inicio">Inicio</Link>
-                <Link to="/backend">Backend</Link>
+                <Link to="/login">Login</Link>
                 <div className='carCount'>
                     <h6 className='countProducts'>{carProducts.length}</h6>
                     <i onClick={() => setOpenCar(true)} className="fa-sharp fa-solid fa-cart-shopping"></i>
@@ -24,7 +24,7 @@ export function Header(){
                 <p className='separador'>|</p>
 
                 <div className="image-perfil">
-                    <img className="perfil-image" src={logo} alt=""><Link to='/backend'></Link></img>
+                   <Link to='/login'> <img className="perfil-image" src={logo} alt=""></img></Link>
                 </div>
             </div>
         </div>

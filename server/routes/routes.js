@@ -1,6 +1,9 @@
 import { Router } from "express";
 import { createProduct, deleteProduct, getProduct, getProducts, updateProduct } from "../controllers/products.controllers.js";
-import { createSale, deleteSale, getSales } from "../controllers/sales.controllers.js";
+import { createSale, deleteSale, getSales} from "../controllers/sales.controllers.js";
+import { getUser } from "../controllers/user.controllers.js";
+
+
 
 const router = Router()
 
@@ -15,5 +18,8 @@ router.get('/products/:id', getProduct)
 router.get('/sales', getSales)
 router.post('/sales', createSale)
 router.delete('/sales/:id', deleteSale)
+//user
+router.post('/login',getUser)
+router.get('/backend',getUser)
 
 export default router

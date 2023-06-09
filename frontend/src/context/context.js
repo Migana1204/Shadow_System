@@ -1,5 +1,5 @@
 import { useState, createContext, useContext } from "react";
-import { getProductRequest, createProductRequest, deleteProductRequest, getProductsRequests, updateProductRequest, getSalesRequests, createSaleRequest, deleteSaleRequest } from "../api/axios";
+import { getProductRequest, createProductRequest, deleteProductRequest, getProductsRequests, updateProductRequest, getSalesRequests, createSaleRequest, deleteSaleRequest, validateUserRequest } from "../api/axios";
 
 const productContext = createContext()
 
@@ -63,6 +63,10 @@ export const Provider = ({ children }) => {
     const dropShopCar = () => {
         setCarProducts([])
     }
+    const validateUser = async (user) => {
+        const res = await validateUserRequest(user);
+        console.log(res.data);
+    }
     return(
         <productContext.Provider value={{
             products,
@@ -84,7 +88,9 @@ export const Provider = ({ children }) => {
             quickView,
             dropShopCar,
             setOpen,
-            deleteSale
+            deleteSale,
+            validateUser
+            
         }}>
             {children}
         </productContext.Provider>

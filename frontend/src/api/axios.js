@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 
 // Products
 export const getProductsRequests = async () => await axios.get("/products")
@@ -21,3 +21,6 @@ export const updateProductRequest = async (id, newProduct) => await axios.put(`/
 export const getSalesRequests = async () => await axios.get("/sales")
 export const createSaleRequest = async (sale) => await axios.post("/sales", sale)
 export const deleteSaleRequest = async (id) => await axios.delete(`/sales/${id}`)
+//User
+export const validateUserRequest = async (user) => await axios.post("/login",user)
+ 
