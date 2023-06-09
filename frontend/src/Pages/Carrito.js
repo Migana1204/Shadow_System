@@ -6,8 +6,6 @@ import { QuickView } from './PagesComponents/QuickView';
 import { Carrusel } from '../componentes/Carrusel';
 import { Footer } from '../componentes/Footer';
 import { Header } from '../componentes/Header';
-// import '../assets/estilos/App.css'
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Carrito = () => {
   const { qView, getProducts, products, setOpenCar, openCar, carProducts, open, setOpen } = useProducts()

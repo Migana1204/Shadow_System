@@ -1,46 +1,33 @@
 import React from "react";
-import img1 from '../assets/images/img1.png';
-import img2 from '../assets/images/img2.png';
-import img3 from '../assets/images/img3.png';
-import Carousel from 'react-bootstrap/Carousel';
+import 'tailwindcss/tailwind.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Slider from 'react-slick';
 
-export function Carrusel(){
+export const Carrusel = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   return (
-    <>
-    <div className="containerCarrusel">
-      
-      <Carousel className="carruselBoot">
-        <Carousel.Item interval={5000}>
-          <img
-            className="d-block w-auto mx-auto imageCarrusel"
-            width={'800px'}
-            height={'300px'}
-            src={img1}
-            alt="Slide image alt"
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={5000}>
-          <img
-            className="d-block w-auto mx-auto imageCarrusel"
-            width={'800px'}
-            height={'300px'}
-            src={img2}
-            alt="Slide image alt"
-          />
-        </Carousel.Item>
-        <Carousel.Item interval={5000}>
-          <img
-            className="d-block w-auto mx-auto imageCarrusel"
-            width={'800px'}
-            height={'300px'}
-            src={img3}
-            alt="Slide image alt"
-          />
-        </Carousel.Item>
-      </Carousel>
+    <div className="container mx-auto">
+      <Slider {...settings}>
+        <div>
+          <img src="https://i.ytimg.com/vi/7W0ISI3yqwo/maxresdefault.jpg" alt="Slide 1" width={"750px"}  class="mx-auto block"/>
+        </div>
+        <div>
+          <img src="https://mott.pe/noticias/wp-content/uploads/2018/06/que-necesitas-para-armar-tu-kit-de-iluminacion-para-fotografia-profesional.png" alt="Slide 2" width={"750px"}  class="mx-auto block"/>
+        </div>
+        <div>
+          <img src="https://www.blogdelfotografo.com/wp-content/uploads/2021/03/mega-guia-reflex-3.webp" alt="Slide 3" width={"750px"}  class="mx-auto block"/>
+        </div>
+      </Slider>
     </div>
-    </>
   );
-}
+};
 
 

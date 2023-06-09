@@ -20,6 +20,5 @@ router.post('/sales', createSale)
 router.delete('/sales/:id', deleteSale)
 //user
 router.post('/login',getUser)
-router.get('/backend',getUser)
 
 export default router
