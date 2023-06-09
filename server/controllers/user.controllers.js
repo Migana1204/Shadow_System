@@ -1,22 +1,22 @@
 import User from "../models/user.js";
 
-export const getUser =  async (req, res) => {     
+export const getUser = async (req, res) => {
     try {
-        const {email,password} = req.body;
+        const { email, password } = req.body;
         const user = await User.findOne()
-            
-        if(email===user.email && parseInt(password) === user.password ) {
+
+        if (email === user.email && parseInt(password) === user.password) {
 
             return res.send("Concedido");
 
-        }else if(email=== user.email || parseInt(password) !== user.password){
+        } else if (email === user.email || parseInt(password) !== user.password) {
 
-            return "Malo"
+            return res.send("Malo")
 
-        }else{return"Malo"}
+        }
 
 
     } catch (error) {
-        return res.status(500).json({message: error.message})
+        return res.status(500).json({ message: error.message })
     }
 }

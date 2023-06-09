@@ -1,11 +1,13 @@
 import { useState, createContext, useContext } from "react";
 import { getProductRequest, createProductRequest, deleteProductRequest, getProductsRequests, updateProductRequest, getSalesRequests, createSaleRequest, deleteSaleRequest, validateUserRequest } from "../api/axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
+
 
 const productContext = createContext()
 
 export const useProducts = () => {
-    
+
     const context = useContext(productContext)
     return context
 }
@@ -50,7 +52,7 @@ export const Provider = ({ children }) => {
     }
     const deleteSale = async (id) => {
         const res = await deleteSaleRequest(id);
-        if (res.status === 204){
+        if (res.status === 204) {
             setSales(sales.filter((sale) => sale._id !== id))
         }
     }
@@ -58,7 +60,7 @@ export const Provider = ({ children }) => {
         setCarProducts([...carProducts, producto]);
     }
     const removeShopCar = async (id) => {
-        setCarProducts(carProducts.filter((product)=> product._id !== id))
+        setCarProducts(carProducts.filter((product) => product._id !== id))
     }
     const quickView = async (id) => {
         setqView(products.filter((product) => product._id === id))
@@ -69,12 +71,18 @@ export const Provider = ({ children }) => {
     const validateUser = async (user) => {
         const res = await validateUserRequest(user);
         console.log(res.data);
-         
-        if(res.data === "Concedido"){
-           navigate("/backend")
+
+        if (res.data === "Concedido") {
+            toast.success("Acceso Concedido")
+            navigate("/backend")
+
+
+        }
+        if (res.data === "Malo") {
+            return toast.error("CORREO Y/O CONTRASEÑA INCORRECTOS")
         }
     }
-    return(
+    return (
         <productContext.Provider value={{
             products,
             qView,
@@ -97,7 +105,7 @@ export const Provider = ({ children }) => {
             setOpen,
             deleteSale,
             validateUser
-            
+
         }}>
             {children}
         </productContext.Provider>
