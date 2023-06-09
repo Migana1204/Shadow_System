@@ -6,15 +6,14 @@ export const getUser =  async (req, res) => {
         const user = await User.findOne()
             
         if(email===user.email && parseInt(password) === user.password ) {
-            
-            console.log("Entraste")
-            
-            
-        }else if(email=== user.email && parseInt(password) !== user.password){
-            console.log("Contraseña Incorrecta")
-        }else if(email!==user.email && parseInt(password) === user.password ){
-            console.log("Correo Incorrecto")
-        }else{console.log("CORREO Y/O CONTRASEÑA INCORRECTA")}
+
+            return res.send("Concedido");
+
+        }else if(email=== user.email || parseInt(password) !== user.password){
+
+            return "Malo"
+
+        }else{return"Malo"}
 
 
     } catch (error) {

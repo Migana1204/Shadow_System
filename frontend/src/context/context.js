@@ -1,14 +1,17 @@
 import { useState, createContext, useContext } from "react";
 import { getProductRequest, createProductRequest, deleteProductRequest, getProductsRequests, updateProductRequest, getSalesRequests, createSaleRequest, deleteSaleRequest, validateUserRequest } from "../api/axios";
+import { useNavigate } from "react-router-dom";
 
 const productContext = createContext()
 
 export const useProducts = () => {
+    
     const context = useContext(productContext)
     return context
 }
 
 export const Provider = ({ children }) => {
+    const navigate = useNavigate()
     const [products, setProducts] = useState([]);
     const [sales, setSales] = useState([]);
     const [carProducts, setCarProducts] = useState([]);
@@ -66,6 +69,10 @@ export const Provider = ({ children }) => {
     const validateUser = async (user) => {
         const res = await validateUserRequest(user);
         console.log(res.data);
+         
+        if(res.data === "Concedido"){
+           navigate("/backend")
+        }
     }
     return(
         <productContext.Provider value={{
