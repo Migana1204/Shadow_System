@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="footerCont">
       <div className="info">
-        <h4>¿Qué somos?</h4>
+        <h4 className='text-lg font-medium'>¿Qué somos?</h4>
         <p>Pagina de venta de multimedia de alta calidad, con un excelente servicio y atención al cliente.</p>
       </div>
 
