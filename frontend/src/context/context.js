@@ -71,12 +71,9 @@ export const Provider = ({ children }) => {
     const validateUser = async (user) => {
         const res = await validateUserRequest(user);
         console.log(res.data);
-
         if (res.data === "Concedido") {
             toast.success("Acceso Concedido")
             navigate("/backend")
-
-
         }
         if (res.data === "Malo") {
             return toast.error("CORREO Y/O CONTRASEÑA INCORRECTOS")
