@@ -17,16 +17,16 @@ export const Carrusel = () => {
   };
 
   return (
-    <div className="container mx-auto shadow-2xl">
+    <div className="container mx-auto shadow-xl pb-8 pt-6 rounded-md">
       <Slider {...settings}>
         <div>
-          <img src="https://i.ytimg.com/vi/7W0ISI3yqwo/maxresdefault.jpg" alt="Slide 1" width={"750px"}  class="mx-auto block"/>
+          <img src={img1} alt="Slide 1" width={"750px"} className="imgCarrusel mx-auto block"/>
         </div>
         <div>
-          <img src="https://mott.pe/noticias/wp-content/uploads/2018/06/que-necesitas-para-armar-tu-kit-de-iluminacion-para-fotografia-profesional.png" alt="Slide 2" width={"750px"}  class="mx-auto block"/>
+          <img src={img2} width={"750px"} className="imgCarrusel mx-auto block"/>
         </div>
         <div>
-          <img src="https://www.blogdelfotografo.com/wp-content/uploads/2021/03/mega-guia-reflex-3.webp" alt="Slide 3" width={"750px"}  class="mx-auto block"/>
+          <img src={img3} alt="Slide 3" width={"750px"}  className="imgCarrusel mx-auto block"/>
         </div>
       </Slider>
     </div>

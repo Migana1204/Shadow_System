@@ -1,5 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useProducts } from '../context/context';
+import { Link } from 'react-router-dom';
+
 
 export function Login() {
   const { validateUser } = useProducts();
@@ -32,6 +34,8 @@ export function Login() {
 
   return (
     <>
+      <Link to="/inicio"><i className="fa-solid fa-house text-black text-lg"></i></Link>
+      
       <div className='g-6 flex h-full flex-wrap items-center justify-center lg:justify-between'>
       <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
         <img

@@ -6,21 +6,22 @@ export const CarShopCard = ({ product }) => {
   return (
     <>
         <div className='ContainerCard group relative rounded-lg shadow-2xl overflow-hidden w-65 h-100'>
-            <div onClick={(e) => {setOpen(true); quickView(product._id);}} key={product._id}>
+            <div onClick={(e) => {setOpen(true); quickView(product._id);}} key={product._id} className='flex flex-col 
+            justify-center items-center'>
                 <div className="aspect-auto overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
                     {product.image ? <img
                     src={product.image.url}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
                     /> : ''}
                 </div>
-                <div className="mt-3 mb-3 flex justify-around items-center">
-                    <p className="text-xl font-medium text-gray-950">
+                <div className="mt-3 mb-3 flex justify-between items-center w-60">
+                    <p className="text-2xl font-medium text-gray-900">
                         {product.name}
                     </p>
 
-                    <p className="text-sm font-medium text-gray-900">
+                    <p className="text-lg font-medium text-gray-700">
                         ${product.price}
-                    </p>  
+                    </p>
                 </div>
 
             </div>
