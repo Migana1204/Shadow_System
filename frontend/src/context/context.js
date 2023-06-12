@@ -3,7 +3,6 @@ import { getProductRequest, createProductRequest, deleteProductRequest, getProdu
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
-
 const productContext = createContext()
 
 export const useProducts = () => {
@@ -15,6 +14,7 @@ export const useProducts = () => {
 export const Provider = ({ children }) => {
     const navigate = useNavigate()
     const [products, setProducts] = useState([]);
+    const [product, setProduct] = useState([]);
     const [sales, setSales] = useState([]);
     const [carProducts, setCarProducts] = useState([]);
     const [qView, setqView] = useState([])
@@ -22,7 +22,8 @@ export const Provider = ({ children }) => {
     const [openCar, setOpenCar] = useState(false);
     const getProducts = async () => {
         const res = await getProductsRequests();
-        setProducts(res.data)
+        setProducts(res.data);
+        setProduct(res.data);
     }
     const createProduct = async (product) => {
         const res = await createProductRequest(product)
@@ -79,6 +80,14 @@ export const Provider = ({ children }) => {
             return toast.error("CORREO Y/O CONTRASEÑA INCORRECTOS")
         }
     }
+    const filter = async (search) => {
+        let resultadoBusqueda = product.filter((el) => {
+            if(el.name.toString().toLowerCase().includes(search.toLowerCase())){
+                return el;
+            }
+        })
+        setProducts(resultadoBusqueda)
+    }
     return (
         <productContext.Provider value={{
             products,
@@ -101,8 +110,8 @@ export const Provider = ({ children }) => {
             dropShopCar,
             setOpen,
             deleteSale,
-            validateUser
-
+            validateUser,
+            filter
         }}>
             {children}
         </productContext.Provider>

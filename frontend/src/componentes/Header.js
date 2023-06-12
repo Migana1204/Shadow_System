@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 import { useProducts } from '../context/context';
 
 export function Header(){
-    const { setOpenCar, carProducts } = useProducts()
+    const { setOpenCar, carProducts, filter} = useProducts()
+    const handleChange = (e) => {
+        filter(e.target.value);
+    }
     return( 
     <header className='EtiquetaHeader'>
         <div className="container-header rounded-lg shadow-md border-slate-50 border-t-2">
             <img src={logo} className="logo-image" alt=""/>
             <div className="input-container">
-                <input className="buscador" type="text" placeholder="Buscar..."/>
+                <input className="buscador" type="text" placeholder="Buscar..." onChange={handleChange}/>
                 <i className="fa-solid fa-magnifying-glass iconsearch"></i>
             </div>
 

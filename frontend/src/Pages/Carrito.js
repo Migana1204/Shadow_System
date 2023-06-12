@@ -9,6 +9,7 @@ import { Header } from '../componentes/Header';
 
 export const Carrito = () => {
   const { qView, getProducts, products, setOpenCar, openCar, carProducts, open, setOpen } = useProducts()
+  
   useEffect(()=>{
     getProducts();
   }, [])
