@@ -6,8 +6,8 @@ import { useProducts } from '../context/context';
 export function Header(){
     const { setOpenCar, carProducts } = useProducts()
     return( 
-    <header>
-        <div className="container-header rounded-lg shadow-md">
+    <header className='EtiquetaHeader'>
+        <div className="container-header rounded-lg shadow-md border-slate-50 border-t-2">
             <img src={logo} className="logo-image" alt=""/>
             <div className="input-container">
                 <input className="buscador" type="text" placeholder="Buscar..."/>

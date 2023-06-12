@@ -34,16 +34,16 @@ export function Login() {
 
   return (
     <>
-      <Link to="/inicio"><i className="fa-solid fa-house text-black text-lg"></i></Link>
+      <Link to="/inicio"><i className="fa-solid fa-house text-white text-lg bg-indigo-500 hover:bg-indigo-600 px-4 py-3 rounded-full"></i></Link>
       
       <div className='g-6 flex h-full flex-wrap items-center justify-center lg:justify-between'>
-      <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
-        <img
-          src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
-          className="bg-slate-900/30 mt-8 b rounded-l-lg pt-4"
-          alt="Phone image"
-          width={"859px"}/>
-      </div>
+        <div className=" md:mb-0 md:w-8/12 lg:w-6/12">
+          <img
+            src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+            className="bg-slate-900/30 mt-8 b rounded-l-lg pt-4"
+            alt="Phone image"
+            width={"859px"}/>
+        </div>
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 mt-8 border-4 border-blue-500 rounded-r-lg">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">

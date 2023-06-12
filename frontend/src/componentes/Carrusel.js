@@ -17,7 +17,7 @@ export const Carrusel = () => {
   };
 
   return (
-    <div className="container mx-auto shadow-xl pb-8 pt-6 rounded-md">
+    <div className="container mx-auto shadow-xl pb-8 pt-6 rounded-md border-slate-50 border-t-2">
       <Slider {...settings}>
         <div>
           <img src={img1} alt="Slide 1" width={"750px"} className="imgCarrusel mx-auto block"/>

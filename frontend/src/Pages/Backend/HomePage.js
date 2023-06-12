@@ -22,18 +22,23 @@ export const HomePage = () => {
     </>
   )
   return (
-    <div className='bg-neutral-900 min-h-screen flex items-center'>
-      <div className='px-10 container m-auto'>
-        <Link to='/inicio' className='text-white px-3 py-2 bg-gray-500 hover:bg-gray-600'>Home</Link>
-        <header className='flex justify-between py-4'>
-          <h1 className='text-2xl text-gray-300 font-bold'>Products ({products.length})</h1>
-          <Link to='/backend/sales' className='text-gray-400 text-sm hover:text-gray-300'>Go to Sales</Link>
-          <Link to='/backend/new' className='text-white px-3 py-2 bg-indigo-500 hover:bg-indigo-600'>Create New Product</Link>
-        </header>
-        <div className='grid grid-cols-3 gap-2'>
-          {products.map(product => (<ProductCard product={product} key={product._id}></ProductCard>))}
+    <>
+      <header className=' h-14 w-screen fixed flex justify-evenly items-center pt-8 basis-0'>
+        <Link to="/inicio"><i className="fa-solid fa-house text-white text-lg bg-indigo-500 hover:bg-indigo-600 px-4 py-3 rounded-full flex flex-grow basis-0"></i></Link>
+        <Link to='/backend/sales' className='text-white px-3 py-2 text-sm hover:text-gray-300 flex bg-indigo-500 hover:bg-indigo-600'>Ir a las ventas</Link>
+        <Link to='/backend/new' className='text-white px-3 py-2 bg-indigo-500 hover:bg-indigo-600'>Crear nuevo producto</Link>
+        
+      </header>
+      <div className='bg-neutral-900 min-h-screen flex items-center'>
+        <div className='px-10 container m-auto'>
+          <header className='flex justify-between py-4'>
+            <h1 className='text-2xl text-gray-300 font-bold'>Productos ({products.length})</h1>
+          </header>
+          <div className='grid grid-cols-3 gap-2'>
+            {products.map(product => (<ProductCard product={product} key={product._id}></ProductCard>))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
