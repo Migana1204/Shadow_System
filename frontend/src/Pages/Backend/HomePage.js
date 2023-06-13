@@ -28,7 +28,7 @@ export const HomePage = () => {
         <Link to='/backend/sales' className='text-white px-3 py-2 text-sm hover:text-gray-300 flex bg-indigo-500 hover:bg-indigo-600'>Ir a las ventas</Link>
         
       </header>
-      <div className='bg-neutral-900 min-h-screen flex items-center'>
+      <div className='bg-neutral-900 min-h-screen flex items-center pt-20'>
         <div className='px-10 container m-auto'>
           <header className='flex justify-between py-4'>
             <h1 className='text-2xl text-gray-300 font-bold'>Productos ({products.length})</h1>

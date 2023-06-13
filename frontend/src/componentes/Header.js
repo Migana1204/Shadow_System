@@ -33,7 +33,7 @@ export function Header(){
 
                 <Link to='/login'>
                     <div className='flex'>
-                        <div className="image-perfil flex items-center justify-center border-black border-2">
+                        <div className="image-perfil flex items-center justify-center hover:border-black hover:border-2">
                             {MostrarImg ? 
                             (<img 
                                 className="perfil-image bg-black" 
