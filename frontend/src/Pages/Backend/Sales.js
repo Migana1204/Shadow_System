@@ -10,8 +10,8 @@ export const Sales = () => {
         <div className='flex justify-center items-center flex-col text-center'>
             <p className='text-white mt-2 mb-6'>Eliminar este registro? <strong>{id}</strong></p>
             <div>
-                <button onClick={() => {deleteSale(id); toast.dismiss(t.id);}} className='bg-red-500 hover:bg-red-400 px-3 py-2 text-sm text-white rounded-sm mx-2'>Delete</button>
-                <button onClick={() => toast.dismiss(t.id)} className='bg-slate-400 hover:bg-slate-500 px-3 py-2 text-white rounded-sm mx-2'>Cancel</button>
+                <button onClick={() => {deleteSale(id); toast.dismiss(t.id);}} className='bg-red-500 hover:bg-red-400 px-3 py-2 text-sm text-white rounded-sm mx-2'>Borrar</button>
+                <button onClick={() => toast.dismiss(t.id)} className='bg-slate-400 hover:bg-slate-500 px-3 py-2 text-white rounded-sm mx-2'>Cancelar</button>
             </div>
         </div>), {
             style: {

@@ -16,7 +16,7 @@ export const CarShopCard = ({ product }) => {
                     /> : ''}
                 </div>
                 <div className="mt-3 mb-3 flex justify-between items-center w-60">
-                    <p className="text-2xl font-medium text-gray-900">
+                    <p className="text-2xl font-medium text-gray-900 truncate w-40">
                         {product.name}
                     </p>
 

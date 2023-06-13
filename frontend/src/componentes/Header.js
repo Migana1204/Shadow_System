@@ -12,8 +12,8 @@ export function Header(){
     }
 
     const [MostrarImg, setMostrarImg] = useState(true)
-
-
+    
+    
     return( 
         <header className='EtiquetaHeader'>
         <div className="container-header rounded-lg shadow-md border-slate-50 border-t-2">
