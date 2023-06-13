@@ -49,7 +49,6 @@ export function Header(){
                                 onMouseLeave={()=>setMostrarImg(true)}
                             ></img>)}
                         </div>
-                        <i className="fa-solid fa-caret-down mt-4 text-black hover:text-indigo-700"></i>
                     </div>
                 </Link>
 
