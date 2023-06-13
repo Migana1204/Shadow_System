@@ -1,5 +1,6 @@
 import React from 'react';
 import { useProducts } from '../../context/context';
+import { toast } from 'react-hot-toast';
 
 export const CarShopCard = ({ product }) => {
     const { addShopCar, carProducts, setOpen, quickView } = useProducts()
@@ -29,6 +30,7 @@ export const CarShopCard = ({ product }) => {
                     if(carProducts.find(item => item._id === product._id)){
                         console.log()
                     }else{
+                        toast.success("AGREGADO AL CARRITO")
                         addShopCar(product);
                     }
                     e.stopPropagation();
