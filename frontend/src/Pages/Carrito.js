@@ -17,7 +17,7 @@ export const Carrito = () => {
     <>
       <Header></Header>
       <Carrusel></Carrusel>
-      <div className="bg-white m-6 rounded-md overflow-hidden shadow-2xl">
+      <div className="bg-white my-6 mx-auto max-w-7xl rounded-md overflow-hidden shadow-2xl">
         <div className="mx-auto max-w-2xl sm:px-6 sm:py-10 lg:max-w-7xl lg:px-8 border-slate-100 rounded-md border-t-2">
           <div>
             <h2 className="text-2xl font-bold tracking-tight text-gray-900 mb-8">Productos ({products.length}) </h2>
