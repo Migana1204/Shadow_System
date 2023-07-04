@@ -6,14 +6,12 @@ import userImg from "../assets/images/userImg.png";
 import adminImg from "../assets/images/adminImg.png"
 
 export function Header(){
-    const { setOpenCar, carProducts, filter} = useProducts()
+    const { setOpenCar, carProducts, filter, total } = useProducts()
     const handleChange = (e) => {
         filter(e.target.value);
     }
-
     const [MostrarImg, setMostrarImg] = useState(true)
-    
-    
+    let cantidad = carProducts.reduce((acumulador, actual) => acumulador + actual.quantity, 0)
     return( 
         <header className='EtiquetaHeader'>
         <div className="container-header rounded-lg shadow-md border-slate-50 border-t-2">
@@ -27,7 +25,7 @@ export function Header(){
                 <Link to="/inicio"><i className="fa-solid fa-house hover:bg-indigo-500 py-2 px-2 rounded-full"></i></Link>
                 <div className='carCount'>
                     
-                    <i onClick={() => setOpenCar(true)} className="fa-sharp fa-solid fa-cart-shopping hover:bg-indigo-500 py-2 px-2 rounded-full -tracking-[-0.2em] "><span className='font-normal'>{carProducts.length}</span></i>
+                    <i onClick={() => setOpenCar(true)} className="fa-sharp fa-solid fa-cart-shopping hover:bg-indigo-500 py-2 px-2 rounded-full -tracking-[-0.2em] "><span className='font-normal'>{cantidad}</span></i>
                 </div>
                 <i className="fa-solid fa-pipe bg-gray-100 w-1 h-20"></i>
 

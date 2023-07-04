@@ -21,7 +21,12 @@ const salesSchema = new mongoose.Schema({
     date: {
         type: String,
         require: true
-    }
+    },
+    quantity:[
+        {
+            type: Number
+        }
+    ]
 })
 
 export default mongoose.model('Sale', salesSchema)

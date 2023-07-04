@@ -28,7 +28,7 @@ export const Carrito = () => {
           </div>
         </div>
       </div>
-      <ShoppingCar products={carProducts} setOpen={setOpenCar} open={openCar}></ShoppingCar>
+      <ShoppingCar carProducts={carProducts} setOpen={setOpenCar} open={openCar}></ShoppingCar>
       {qView.map(product => <QuickView product={product} open={open} setOpen={setOpen} key={product._id}></QuickView>)}
       <Footer></Footer>
     </>

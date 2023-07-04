@@ -6,11 +6,12 @@ import { useProducts } from '../../context/context';
 import '../../assets/estilos/App.css'
 import { toast } from 'react-hot-toast';
 
-export const ShoppingCar = ({ products, setOpen, open }) => {
-    const { removeShopCar, createSale, dropShopCar } = useProducts()
-    let total = products.reduce((acumulador, actual) => acumulador + actual.price, 0);
-    let names = products.map(product => product.name)
-    let precios = products.map(product => product.price)
+export const ShoppingCar = ({ carProducts, setOpen, open }) => {
+    const { removeShopCar, createSale, dropShopCar, products } = useProducts()
+    let total = carProducts.reduce((acumulador, actual) => acumulador + (actual.price * actual.quantity), 0);
+    let names = carProducts.map(product => product.name)
+    let precios = carProducts.map(product => product.price)
+    let qnty = carProducts.map(product => product.quantity)
     return (
         <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={setOpen}>
@@ -58,7 +59,7 @@ export const ShoppingCar = ({ products, setOpen, open }) => {
                         <div className="mt-8">
                           <div className="flow-root">
                             <ul role="list" className="-my-6 divide-y divide-gray-200">
-                              {products.map((product) => (
+                              {carProducts.map((product) => (
                                 <li key={product._id} className="flex py-6">
                                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                     {product.image ? <img
@@ -79,13 +80,16 @@ export const ShoppingCar = ({ products, setOpen, open }) => {
                                       </div>
                                     </div>
                                     <div className="flex flex-1 items-end justify-between text-sm">
-                                      <p className="text-gray-500">{product.description}</p>
+                                      <p className="text-gray-500">Cantidad: {product.quantity}</p>
   
                                       <div className="flex">
                                         <button
                                           type="button"
                                           className="font-medium text-indigo-600 hover:text-red-700"
-                                          onClick={() => removeShopCar(product._id)}
+                                          onClick={() => {
+                                            removeShopCar(product._id);
+                                            product.quantity = 1;
+                                          }}
                                         >
                                           Eliminar
                                         </button>
@@ -108,15 +112,16 @@ export const ShoppingCar = ({ products, setOpen, open }) => {
                         <div className="mt-6">
                           <a
                             onClick={() => {
-                              if(products.length !== 0) {
-                                createSale({products: names, prices: precios, value: total, date: new Date().toDateString()});
+                              if(carProducts.length !== 0) {
+                                createSale({products: names, prices: precios, value: total, date: new Date().toDateString(), quantity: qnty});
                                 dropShopCar();
                                 toast.success("COMPRADO")
+                                products.map(el => el.quantity = 1);
                               }
                             }}
-                            className="cursor-pointer flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                            className="cursor-pointer flex items-center justify- rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                           >
-                            Realizar compra
+                            Realizar compracenter
                           </a>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">

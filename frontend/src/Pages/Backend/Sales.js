@@ -36,7 +36,8 @@ export const Sales = () => {
                             <div className="flex gap-x-4">
                                 <div className="min-w-0 flex-auto">
                                     <p className="text-sm font-semibold leading-6 mr-5 text-gray-100">{sale.products.map(products => products + "  ")}</p>
-                                    <p className="text-sm font-semibold leading-6 text-gray-300">{sale.prices.map(price => price + " ")}</p>
+                                    <p className="text-sm font-semibold leading-6 text-gray-300">{sale.prices.map(price => price + "  ")}</p>
+                                    <p className="text-sm font-semibold leading-6 text-gray-300">{sale.quantity.map(qnt => qnt + "  ")}</p>
                                     <p className="mt-1 truncate text-xs leading-5 text-gray-500">Total: ${sale.value}</p>
                                 </div>
                             </div>

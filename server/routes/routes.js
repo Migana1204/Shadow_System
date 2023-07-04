@@ -18,7 +18,8 @@ router.get('/products/:id', getProduct)
 router.get('/sales', getSales)
 router.post('/sales', createSale)
 router.delete('/sales/:id', deleteSale)
-//user
+
+// User
 router.post('/login',getUser)
 
 export default router

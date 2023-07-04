@@ -28,7 +28,7 @@ export const CarShopCard = ({ product }) => {
             </div>
                 <button type='submit' onClick={(e) => {
                     if(carProducts.find(item => item._id === product._id)){
-                        console.log()
+                        product.quantity++;
                     }else{
                         toast.success("AGREGADO AL CARRITO")
                         addShopCar(product);
