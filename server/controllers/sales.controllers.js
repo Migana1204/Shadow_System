@@ -13,7 +13,6 @@ export const createSale = async (req, res) => {
     try {
         const {products, prices, value, date, quantity} = req.body
         const newSale = new Sale({products, prices, value, date, quantity})
-        console.log(newSale)
         await newSale.save()
         return res.json(newSale)
     } catch (error) {

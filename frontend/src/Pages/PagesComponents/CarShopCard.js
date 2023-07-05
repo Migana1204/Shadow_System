@@ -3,7 +3,7 @@ import { useProducts } from '../../context/context';
 import { toast } from 'react-hot-toast';
 
 export const CarShopCard = ({ product }) => {
-    const { addShopCar, carProducts, setOpen, quickView } = useProducts()
+    const { addShopCar, carProducts, setOpen, quickView, refrescar } = useProducts()
   return (
     <>
         <div className='ContainerCard group relative rounded-lg shadow-2xl overflow-hidden w-65 h-100 cursor-pointer '>
@@ -30,9 +30,11 @@ export const CarShopCard = ({ product }) => {
                     if(carProducts.find(item => item._id === product._id)){
                         product.quantity++;
                     }else{
+                        product.quantity = 1;
                         toast.success("AGREGADO AL CARRITO")
                         addShopCar(product);
                     }
+                    refrescar()
                     e.stopPropagation();
                 }} className='w-full text-white font-medium px-3 py-2 bg-violet-700 hover:opacity-75'>Comprar</button>
         </div>

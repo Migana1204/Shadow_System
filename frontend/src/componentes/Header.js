@@ -6,7 +6,7 @@ import userImg from "../assets/images/userImg.png";
 import adminImg from "../assets/images/adminImg.png"
 
 export function Header(){
-    const { setOpenCar, carProducts, filter, total } = useProducts()
+    const { setOpenCar, carProducts, filter } = useProducts()
     const handleChange = (e) => {
         filter(e.target.value);
     }

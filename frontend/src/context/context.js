@@ -20,7 +20,7 @@ export const Provider = ({ children }) => {
     const [qView, setqView] = useState([])
     const [open, setOpen] = useState(false);
     const [openCar, setOpenCar] = useState(false);
-    const [total, setTotal] = useState(0);
+    const [refresh, setRefresh] = useState(false);
     const getProducts = async () => {
         const res = await getProductsRequests();
         setProducts(res.data);
@@ -59,6 +59,7 @@ export const Provider = ({ children }) => {
         }
     }
     const addShopCar = async (producto) => {
+        console.log(producto)
         setCarProducts([...carProducts, producto]);
     }
     const removeShopCar = async (id) => {
@@ -72,7 +73,6 @@ export const Provider = ({ children }) => {
     }
     const validateUser = async (user) => {
         const res = await validateUserRequest(user);
-        console.log(res.data);
         if (res.data === "Concedido") {
             toast.success("Acceso Concedido")
             navigate("/backend")
@@ -89,6 +89,13 @@ export const Provider = ({ children }) => {
         })
         setProducts(resultadoBusqueda)
     }
+    const refrescar = () => {
+        if(refresh === false){
+            setRefresh(true)
+        } else{
+            setRefresh(false)
+        }
+    }
     return (
         <productContext.Provider value={{
             products,
@@ -97,7 +104,6 @@ export const Provider = ({ children }) => {
             openCar,
             carProducts,
             sales,
-            total,
             setOpenCar,
             getProducts,
             createProduct,
@@ -114,7 +120,7 @@ export const Provider = ({ children }) => {
             deleteSale,
             validateUser,
             filter,
-            setTotal
+            refrescar,
         }}>
             {children}
         </productContext.Provider>

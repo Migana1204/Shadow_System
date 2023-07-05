@@ -88,7 +88,7 @@ export const ShoppingCar = ({ carProducts, setOpen, open }) => {
                                           className="font-medium text-indigo-600 hover:text-red-700"
                                           onClick={() => {
                                             removeShopCar(product._id);
-                                            product.quantity = 1;
+                                            product.quantity = 0;
                                           }}
                                         >
                                           Eliminar
@@ -116,12 +116,12 @@ export const ShoppingCar = ({ carProducts, setOpen, open }) => {
                                 createSale({products: names, prices: precios, value: total, date: new Date().toDateString(), quantity: qnty});
                                 dropShopCar();
                                 toast.success("COMPRADO")
-                                products.map(el => el.quantity = 1);
+                                products.map(el => el.quantity = 0);
                               }
                             }}
                             className="cursor-pointer flex items-center justify- rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                           >
-                            Realizar compracenter
+                            Realizar compra
                           </a>
                         </div>
                         <div className="mt-6 flex justify-center text-center text-sm text-gray-500">
