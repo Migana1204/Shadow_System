@@ -3,6 +3,7 @@ import User from "../models/user.js";
 export const getUser = async (req, res) => {
     try {
         const { email, password } = req.body;
+        
         const user = await User.findOne()
 
         if (email === user.email && parseInt(password) === user.password) {
@@ -11,7 +12,8 @@ export const getUser = async (req, res) => {
 
         } else if (email === user.email || parseInt(password) !== user.password) {
 
-            return res.send("Malo")
+            return res.send("Puto")
+
 
         }
 
