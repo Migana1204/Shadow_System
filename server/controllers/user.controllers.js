@@ -12,7 +12,7 @@ export const getUser = async (req, res) => {
 
         } else if (email === user.email || parseInt(password) !== user.password) {
 
-            return res.send("Puto")
+            return res.send("MALO")
 
 
         }
